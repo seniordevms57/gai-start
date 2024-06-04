@@ -1,0 +1,42 @@
+<nav class="fixed w-full z-10 flex flex-wrap items-center justify-between px-4 py-2 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 text-sm font-medium" data-controller="toggle" style="background-color: #0C1824;">
+  <div class="flex items-center flex-shrink-0 mr-6">
+    <%= image_tag("logo.png", height: '60', width: '60', class: "rounded-circle") %>
+    <%= link_to root_path, class: "flex items-center text-white hover:text-gray-200" do %>
+      <%= render_svg "logo", styles: "fill-current" %>
+      <span class="sr-only"><%= Jumpstart.config.application_name %></span>
+    <% end %>
+  </div>
+  <div class="block lg:hidden">
+    <button type="button" id="sidebar-open" class="flex items-center p-3 text-gray-500 lg:hidden focus:outline-none focus:text-gray-700" data-action="click->toggle#toggle touch->toggle#toggle">
+      <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path></svg>
+    </button>
+  </div>
+  <div class="flex-grow hidden w-full pb-6 opacity-0 lg:opacity-100 lg:flex lg:w-auto lg:pb-0"
+        data-toggle-target="toggleable"
+        data-transition-enter="transition-all ease-linear duration-300"
+        data-transition-enter-from="opacity-0 h-0"
+        data-transition-enter-to="opacity-100"
+        data-transition-leave="transition-all ease-linear duration-300"
+        data-transition-leave-from="opacity-100"
+        data-transition-leave-to="opacity-0">
+    <div class="lg:flex-grow">
+    <% if !user_signed_in? %>
+      <%= render "left_nav" %>
+    <% else %>
+    <%= render "left_nav_coc" %>
+    <% end %>
+    </div>
+    <div>
+      <%= render "right_nav" %>
+      <% if user_signed_in? %>
+        <div class="hidden lg:inline-block">
+          <%= render "notifications" %>
+        </div>
+        <%= render "user_menu_nav" %>
+      <% else %>
+        <%= link_to t(".log_in"), new_user_session_path, class: 'nav-link' %>
+        <%= link_to t(".sign_up"), new_user_registration_path, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</nav>

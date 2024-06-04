@@ -1,0 +1,21 @@
+---
+application_name: Cognitive Operations
+business_name: Cognitive Operations, Inc
+business_address: |-
+  Cognitive Operations, Inc
+  1401 Pennsylvania Ave
+  STE 105 Box2060
+  Wilmington, DE 19806
+domain: gochange.ai
+support_email: damian@gochange.ai
+default_from_email: goChange <no-reply@gochange.ai>
+background_job_processor: sidekiq
+email_provider: sendgrid
+personal_accounts: true
+apns: false
+fcm: false
+integrations:
+omniauth_providers:
+payment_processors:
+multitenancy:
+gems:

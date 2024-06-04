@@ -1,0 +1,51 @@
+<%# Place any links for the LEFT side of the nav bar here. Be sure to add class: "nav-link" to each item for proper spacing. %>
+<%= nav_link_to "Home", root_path, class: "nav-link text-white hover:text-gray-500 dark:text-gray-100", starts_with: root_path %>
+<%= nav_link_to "Cognitive Operations Center", about_path, class: "nav-link text-white hover:text-gray-500 dark:text-gray-100" %>
+        <!-- Our Services Dropdown -->
+        <div class="nav-link">
+          <div class="relative" data-controller="dropdown">
+            <button data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" class="inline-block select-none" aria-label="Profile Menu">
+              <span class="flex items-center text-white hover:text-gray-500 dark:text-gray-100 appearance-none">
+               Our Services
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current w-4 h-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+              </span>
+            </button>
+            <div data-dropdown-target="menu"
+                  data-transition-enter="transition ease-out duration-200"
+                  data-transition-enter-from="opacity-0 translate-y-1"
+                  data-transition-enter-to="opacity-100 translate-y-0"
+                  data-transition-leave="transition ease-in duration-150"
+                  data-transition-leave-from="opacity-100 translate-y-0"
+                  data-transition-leave-to="opacity-0 translate-y-1"
+                  class="z-20 hidden mt-2 lg:absolute lg:right-0 dropdown-menu">
+              <div class="overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded shadow-md">
+                <%= link_to "About", about_path, class: 'text-gray-800 bg-white hover:bg-primary-50 dark:text-gray-50 dark:bg-gray-800 dark:hover:bg-primary-800 transition ease-in-out duration-200 whitespace-nowrap no-underline block px-6 py-3' %><%#= link_to t(".api_tokens"), api_tokens_path, class: 'text-gray-800 bg-white hover:bg-primary-50 dark:text-gray-50 dark:bg-gray-800 dark:hover:bg-primary-800 transition ease-in-out duration-200 whitespace-nowrap no-underline block px-6 py-3' if Jumpstart.config.payments_enabled? %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Industries Dropdown -->
+        <div class="nav-link">
+          <div class="relative" data-controller="dropdown">
+            <button data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" class="inline-block select-none" aria-label="Profile Menu">
+              <span class="flex items-center text-white hover:text-gray-500 dark:text-gray-100 appearance-none">
+               Industries
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="fill-current w-4 h-4"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
+              </span>
+            </button>
+            <div data-dropdown-target="menu"
+                  data-transition-enter="transition ease-out duration-200"
+                  data-transition-enter-from="opacity-0 translate-y-1"
+                  data-transition-enter-to="opacity-100 translate-y-0"
+                  data-transition-leave="transition ease-in duration-150"
+                  data-transition-leave-from="opacity-100 translate-y-0"
+                  data-transition-leave-to="opacity-0 translate-y-1"
+                  class="z-20 hidden mt-2 lg:absolute lg:right-0 dropdown-menu">
+              <div class="overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded shadow-md">
+                <%= link_to "About", about_path, class: 'text-gray-800 bg-white hover:bg-primary-50 dark:text-gray-50 dark:bg-gray-800 dark:hover:bg-primary-800 transition ease-in-out duration-200 whitespace-nowrap no-underline block px-6 py-3' %><%#= link_to t(".api_tokens"), api_tokens_path, class: 'text-gray-800 bg-white hover:bg-primary-50 dark:text-gray-50 dark:bg-gray-800 dark:hover:bg-primary-800 transition ease-in-out duration-200 whitespace-nowrap no-underline block px-6 py-3' if Jumpstart.config.payments_enabled? %>
+              </div>
+            </div>
+          </div>
+        </div>
+<%= nav_link_to "About Us", about_path, class: "nav-link text-white hover:text-gray-500 dark:text-gray-100" %>
+<%= nav_link_to "Contact Us", contact_path, class: "nav-link text-white hover:text-gray-500 dark:text-gray-100" %>
